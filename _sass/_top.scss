@@ -1,0 +1,36 @@
+.page-top{
+  background-color: #0E1236;
+  padding: 40px 20px 0;
+  border-bottom: 18px solid black;
+  box-shadow: 0 1px 12px black;
+
+  .container{
+    background-image: url('/images/top.png');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+
+    a {
+      color: white;
+      text-shadow: 1px 1px 10px #969696;
+      transition: all .5s ease-in-out;
+
+      &:hover {
+        text-shadow: 1px 1px 30px #969696;
+        text-decoration: none;
+      }
+    }
+  }
+
+  p {
+    font-family: $headings-font-family;
+    color: #DCDCDC;
+    text-shadow: 0 0 4px #0E1236;
+    padding-bottom: $spacer;
+    margin-bottom: 0;
+  }
+}

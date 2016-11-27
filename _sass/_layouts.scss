@@ -1,0 +1,58 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: url('/images/footer.jpg');
+  background-position: left bottom;
+  background-repeat: repeat-x;
+}
+
+.main-area {
+  background-color: $main-bg-color;
+}
+
+.page-footer {
+  padding: 40px 0 20px;
+
+  h1 {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  a {
+    font-size: 15px;
+  }
+
+  .legal {
+    text-align: center;
+    margin-top: 70px;
+  }
+  .social-links {
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      font-size: 2rem;
+    }
+  }
+}
+
+.main-container {
+  padding-top: $spacer * 2;
+  padding-bottom: $spacer * 2;
+}
+
+.navbar-brand {
+  font-family: $headings-font-family;
+  font-size: 27px;
+  padding: 0;
+  text-shadow: 1px 1px 10px #d0d0d0;
+  transition: all .5s ease-in-out;
+
+  &:hover {
+    text-shadow: 1px 1px 30px #ffffff;
+  }
+}

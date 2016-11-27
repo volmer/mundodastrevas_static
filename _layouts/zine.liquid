@@ -1,0 +1,46 @@
+---
+layout: application
+---
+<h1>{{ page.title }}</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    {% if page.image %}
+      <img src="{{ page.image }}" class="zine-image img-fluid" />
+    {% endif %}
+
+    <div class="zine-description">{{ page.content }}</div>
+
+    <h2>Posts em {{ page.title }}</h2>
+
+    {% if site.categories[page.slug] %}
+      {% for post in site.categories[page.slug] %}
+        <div class="list-item-with-image post-list-item">
+          <a href="{{ post.url }}">
+            <img src="{{ post.image_small }}" />
+          </a>
+
+          <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+
+          <p>{{ post.truncate}}</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="alert alert-info">
+        Ainda não existem posts neste zine.
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="col-md-4">
+    <div class="card zine-author">
+      <div class="card-header">O Autor</div>
+
+      <div class="card-block">
+        <img src="{{ page.user_image }}" class="rounded-circle img-thumbnail img-fluid" />
+        <h3 class="card-title">{{ page.user }}</h3>
+        <p class="card-text bio">{{ page.user_bio }}</p>
+      </div>
+    </div>
+  </div>
+</div>

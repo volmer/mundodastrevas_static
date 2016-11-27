@@ -1,0 +1,64 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="{% if page.type %}{{ page.type }}{% else %}article{% endif %}">
+<meta property="og:locale" content="{{ site.lang }}">
+<meta property="og:determiner" content="auto">
+<meta property="og:title" content="{{ page.title  || site.title }}">
+
+{% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords }}">
+{% endif %}
+
+{% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  <meta property="og:description" content="{{ page.description }}">
+{% endif %}
+
+{% if page.author %}
+  <meta name="author" content="{{ page.author }}">
+  <meta property="article:author" content="{{ page.author }}">
+{% endif %}
+
+{% if page.canonical_url %}
+  <meta property="og:url" content="{{ site.url }}{{ page.canonical_url }}">
+{% endif %}
+
+{% if page.image %}
+  <meta property="og:image" content="{{ page.image }}">
+{% else %}
+  <meta property="og:image" content="{{ site.url }}/assets/Mundo_das_Trevas_background-2f1bf13045d1ca603b34151b7d82d62f785f87bc6e11a23b5e19d0bc41f85a4a.jpg">
+{% endif %}
+
+{% if page.see_also %}
+  <meta property="og:see_also" content="{{ page.see_also }}">
+{% endif %}
+
+{% if page.updated_at %}
+  <meta property="og:updated_time" content="{{ page.updated_at }}">
+{% endif %}
+
+<meta name="rating" content="general">
+<meta name="robots" content="follow">
+
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed" />
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17078442-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Amethysta" />
+
+{{ page.head_extra }}

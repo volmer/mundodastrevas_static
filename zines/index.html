@@ -1,0 +1,24 @@
+---
+title: Zines
+canonical_url: /zines
+---
+<h1>Zines</h1>
+
+<div class="list-group">
+  {% for zine in site.zines %}
+    <a href="{{ zine.url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ zine.title }}</h5>
+        <small>
+          {% capture post_count %}{{ site.categories[zine.slug] | size }}{% endcapture %}
+          {% if post_count == '1' %}
+            1 post
+          {% else %}
+            {{ post_count }} posts
+          {% endif %}
+        </small>
+      </div>
+      <p class="mb-1">Por {{ zine.user }}</p>
+    </a>
+  {% endfor %}
+</div>
