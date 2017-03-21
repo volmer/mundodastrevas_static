@@ -49,6 +49,8 @@ collections:
   topics:
     output: true
     permalink: '/forums/:categories/topics/:slug/'
+  forum_posts:
+    output: false
 defaults:
   -
     scope:

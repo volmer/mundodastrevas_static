@@ -1,0 +1,49 @@
+---
+layout: application
+---
+<h1>{{ page.name }}</h1>
+
+<p>
+  Criado por {{ page.user }}
+  <span class="text-muted">·</span>
+  {{ page.posts_count }} postagens
+</p>
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/forums/{{ page.forum}}">{{ page.forum_name }}</a></li>
+  <li class="breadcrumb-item active">{{ page.name }}</li>
+</ol>
+
+{% for post in site.forum_posts %}
+  {% if post.topic == page.slug %}
+    <div class="forum-post">
+      <div class="row">
+        <div class="col-lg-2 col-md-4 user">
+          <img src="{{ post.user_avatar }}" class="img-fluid img-thumbnail rounded-circle" />
+
+          <p>{{ post.user }}</p>
+        </div>
+
+        <div class="col-lg-10 col-md-8 post">
+          <div class="content">{{ post.content }}</div>
+
+          <div class="meta">
+            <time datetime="{{ post.created_at }}">
+              {{ post.created_at | date_to_string }}
+            </time>
+
+            {% if post.created_at != post.updated_at %}
+              -
+              <em>
+                Atualizado em
+                <time datetime="{{ post.updated_at }}">
+                  {{ post.updated_at | date_to_string }}
+                </time>
+              </em>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
