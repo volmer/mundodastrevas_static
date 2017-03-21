@@ -1,0 +1,14 @@
+---
+title: Fóruns
+canonical_url: /forums
+---
+<h1>Fóruns</h1>
+
+{% for forum in site.forums %}
+  <div class="card mb-3">
+    <div class="card-block">
+      <h3 class="card-title"><a href="{{ forum.url }}">{{ forum.name }}</a></h3>
+      <p class="card-text">{{ forum.content }}</p>
+    </div>
+  </div>
+{% endfor %}

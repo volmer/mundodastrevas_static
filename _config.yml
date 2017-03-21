@@ -43,6 +43,12 @@ collections:
   pages:
     output: true
     permalink: '/pages/:slug/'
+  forums:
+    output: true
+    permalink: '/forums/:slug/'
+  topics:
+    output: true
+    permalink: '/forums/:categories/topics/:slug/'
 defaults:
   -
     scope:

@@ -1,0 +1,42 @@
+---
+layout: application
+---
+<h1>{{ page.name }}</h1>
+
+<div class="forum-description">{{ page.content}}</div>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Tópico</th>
+      <th>Posts</th>
+      <th>Última atividade</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for topic in site.topics %}
+      {% if topic.forum == page.slug %}
+        <tr class="topic">
+          <td>
+            <a href="{{ topic.url }}">{{ topic.name }}</a>
+          </td>
+
+          <td>{{ topic.posts_count }}</td>
+
+          <td>
+            {% if topic.last_post_created_at %}
+              <a href="{{ topic.url }}">
+                <img src="{{ topic.last_post_user_avatar_thumb_url }}" class="mini-avatar" />
+                {{ topic.last_post_user }},
+                <time datetime="{{ topic.last_post_created_at }}">
+                  {{ topic.last_post_created_at | date_to_string }}
+                </time>
+              </a>
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
