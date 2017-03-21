@@ -40,6 +40,9 @@ collections:
   posts:
     output: true
     permalink: '/zines/:categories/posts/:slug/'
+  pages:
+    output: true
+    permalink: '/pages/:slug/'
 defaults:
   -
     scope:
