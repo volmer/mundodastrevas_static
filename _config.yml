@@ -32,19 +32,19 @@ exclude:
 collections:
   zines:
     output: true
-    permalink: '/zines/:path/'
+    permalink: '/zines/:path'
   posts:
     output: true
-    permalink: '/zines/:categories/posts/:slug/'
+    permalink: '/zines/:categories/posts/:slug'
   pages:
     output: true
-    permalink: '/pages/:slug/'
+    permalink: '/pages/:slug'
   forums:
     output: true
-    permalink: '/forums/:slug/'
+    permalink: '/forums/:slug'
   topics:
     output: true
-    permalink: '/forums/:categories/topics/:slug/'
+    permalink: '/forums/:categories/topics/:slug'
   forum_posts:
     output: false
 defaults:
